@@ -2,7 +2,16 @@
 
 //
 // PROMPT 1
-//
+function logInAndOut() {
+    console.log("the button worked!");
+    const button = document.getElementById("login-button");
+        if (button.innerText === "Log In") {
+            button.innerText = "Log Out";
+        }
+        else {
+            button.innerText = "Log In";
+        }
+        }
 // When a user clicks on the button that says "Log In", its text should
 // update and say "Log out".
 //
@@ -10,7 +19,7 @@
 // to "Log In".
 
 // TODO: replace this comment with your code
-
+$('#login-button').on('click', logInAndOut);
 
 //
 // PROMPT 2
