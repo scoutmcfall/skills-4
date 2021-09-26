@@ -70,11 +70,8 @@ $('#prompt-2').on('submit', customAlert);
 // $('#list-adder').on('click', addItem);
 //////////////////////////////////
 function addItem() {
-const addItems = (item) => {
-      $('#list').append
-      (`<li>Item</li>`);
+      $('#list').append(`<li>Item</li>`);//grab element and append html
     }
-}
 $('#list-adder').on('click', addItem);
 //////////////////////////////////
 ////do i have to use useState to keep adding items? this is a js file, not jsx
