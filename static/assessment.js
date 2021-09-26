@@ -184,21 +184,21 @@ getBerries();
 //
 // **DO NOT update any of the HTML provided!!!**
 function findFactorial() {
-
-    alert(num.value);
-    let startingPlace = num
+    alert('we are in the function');
+    const formInput = document.getElementByName("number");
+    alert(formInput);//test
+    let startingPlace = formInput
     let currentProduct = startingPlace
     while (startingPlace > 0){
         startingPlace -= 1;
         currentProduct = currentProduct*(startingPlace);
     }
 
-return currentProduct
-$('#factorial-result').append(``);
+    return currentProduct
+$('#factorial-result').append(`<li>${currentProduct}</li>`);
 }
 // TODO: replace this comment with your code
-
 // const formValues = $('#num').serialize();//turns form into js object string
 // $.post("/", formValues, resultHandler);//ajax, doing something
 
-$('#num').on('submit', findFactorial);
+$('#num').on('submit', findFactorial);//reloads the whole page for some reason?
