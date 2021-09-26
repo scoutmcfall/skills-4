@@ -109,13 +109,12 @@ $('#list-adder').on('click', addItem);
 // $('#blue-changer').on('click', changeBlue);
 // TODO: replace this comment with your code
 function changeRed() {
-    const colorChangeEls = $('#changes-colors');
-  
+    const colorChangeEls = $('.changes-colors');
     for (const el of colorChangeEls) {
-      $(el).toggleClass('red-changer');
+      $(el).css('color', 'red');
     }
   }
-  $('.red-changer').on('click', changeRed);
+  $('#red-changer').on('click', changeRed);
 
 //
 // PROMPT 5
@@ -148,15 +147,18 @@ function changeRed() {
 // to their API docs) and "Berries" (this is the section about berries).
 
 // TODO: replace this comment with your code
-function getBerries(){
-    keyword = request.args.get('berry', '')
-    url = 'https://pokeapi.co/api/v2/berry/{name}'
-    payload = {'apikey': API_KEY}
-    console.log("inside function!")
-    data = {'Berries!': []}
-    console.log(data)
-    return keyword
-};
+function getBerries() {
+    const url = 'https://pokeapi.co/api/v2/berry/';
+   
+    $.get(url, res => {
+        for (const el of res["results"]){
+        $("#berries").append(`<li>${el["name"]}</li>`);
+
+    }}
+    )
+    return nameArray
+  }
+getBerries();  
 
 //
 // PROMPT 6
@@ -176,14 +178,21 @@ function getBerries(){
 //
 // **DO NOT update any of the HTML provided!!!**
 function findFactorial() {
-    const num = document.getElementsByName("number");
+
+    alert(num.value);
     let startingPlace = num
-    let currentProduct = 0
-    while (num > 0){
-        currentPtoduct = num*(num-1)
-        startingPlace -= 1
+    let currentProduct = startingPlace
+    while (startingPlace > 0){
+        startingPlace -= 1;
+        currentProduct = currentProduct*(startingPlace);
     }
+
 return currentProduct
+$('#factorial-result').append(``);
 }
 // TODO: replace this comment with your code
+
+// const formValues = $('#num').serialize();//turns form into js object string
+// $.post("/", formValues, resultHandler);//ajax, doing something
+
 $('#num').on('submit', findFactorial);
