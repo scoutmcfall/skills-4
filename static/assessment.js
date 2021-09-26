@@ -24,7 +24,7 @@ $('#login-button').on('click', logInAndOut);//event handler saying run above fun
 //
 // PROMPT 2
 function customAlert() {
-    const formInput = document.getElementById("alert-text");
+    const formInput = document.getElementById("alert-text");//should i use id or name?
     alert(formInput.value);
     }
 $('#prompt-2').on('submit', customAlert);
@@ -163,7 +163,6 @@ function getBerries() {
 
     }}
     )
-    return nameArray
   }
 getBerries();  
 
