@@ -115,6 +115,13 @@ function changeRed() {
     }
   }
   $('#red-changer').on('click', changeRed);
+function changeBlue() {
+    const colorChangeEls = $('.changes-colors');
+    for (const el of colorChangeEls) {
+      $(el).css('color', 'blue');
+    }
+  }
+  $('#blue-change').on('click', changeBlue);//the blue button is change not changer, very tricky
 
 //
 // PROMPT 5
