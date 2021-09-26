@@ -2,10 +2,10 @@
 
 //
 // PROMPT 1
-function logInAndOut() {
-    console.log("the button worked!");
-    const button = document.getElementById("login-button");
-        if (button.innerText === "Log In") {
+function logInAndOut() {//name function
+    console.log("the button worked!");//test the button
+    const button = document.getElementById("login-button"); //initialize button as the element button
+       if (button.innerText === "Log In") {//if statement swapping button text
             button.innerText = "Log Out";
         }
         else {
@@ -19,11 +19,26 @@ function logInAndOut() {
 // to "Log In".
 
 // TODO: replace this comment with your code
-$('#login-button').on('click', logInAndOut);
+$('#login-button').on('click', logInAndOut);//event handler saying run above function when clicked
 
 //
 // PROMPT 2
-//
+function customAlert() {
+    const formInput = document.getElementById("alert-text");
+    alert(formInput.value);
+    }
+$('#prompt-2').on('submit', customAlert);
+// function customAlert(evt) {
+//     evt.preventDefault();
+  
+//     const url = '/';
+//     const formData = {alert: $('#alert-text').val()};
+//       $.get('/', formData, res => {
+//       alert(`Your alert is: ${res.alert}`);//why is this undefined?
+//     }
+//     )
+//   }
+//   $('#prompt-2').on('submit', customAlert);
 // This form will send an alert to a user via the built-in alert function.
 //
 // A user should be able to enter what they want the alert to say in the
@@ -47,10 +62,37 @@ $('#login-button').on('click', logInAndOut);
 //     <li>Item</li>  <!-- This list item was already here -->
 //     <li>Item</li>  <!-- This was added after double-clicking -->
 //   </ul>
+////////////////////////////////// 
+//function addItem() {
+//     const button = document.getElementById("#list");
+    
+// }
+// $('#list-adder').on('click', addItem);
+//////////////////////////////////
+function addItem() {
+const addItems = (item) => {
+      $('#list').append
+      (`<li>Item</li>`);
+    }
+}
+$('#list-adder').on('click', addItem);
+//////////////////////////////////
+////do i have to use useState to keep adding items? this is a js file, not jsx
+// function addItem() {
+//     const [currentItems, moreItems] = React.useState('?');
+//   console.log("I'm in the function!")
+//     function add() {
+//       console.log("i'm in the second function!")
+//     }
+//     return (
+//       <button type="button" className="list-adder" onClick={add}>
+//       </button>
+//     );
+//   }
 
 // TODO: replace this comment with your code
-
-
+//REACTdom.render(<hello/>, document.querySelector('#list'))
+//////////////////////////////////
 //
 // PROMPT 4
 //
@@ -60,9 +102,23 @@ $('#login-button').on('click', logInAndOut);
 //
 // Clicking on "Turn Stuff Red" should make text red and clicking on "Turn
 // Stuff Blue" should make text blue.
+// function changeRed() {
 
+// }
+// $('#red-changer').on('click', changeRed);
+// function changeBlue() {
+
+// }
+// $('#blue-changer').on('click', changeBlue);
 // TODO: replace this comment with your code
-
+function changeRed() {
+    const colorChangeEls = $('#changes-colors');
+  
+    for (const el of colorChangeEls) {
+      $(el).toggleClass('red-changer');
+    }
+  }
+  $('.red-changer').on('click', changeRed);
 
 //
 // PROMPT 5
@@ -95,7 +151,15 @@ $('#login-button').on('click', logInAndOut);
 // to their API docs) and "Berries" (this is the section about berries).
 
 // TODO: replace this comment with your code
-
+function getBerries(){
+    keyword = request.args.get('berry', '')
+    url = 'https://pokeapi.co/api/v2/berry/{name}'
+    payload = {'apikey': API_KEY}
+    console.log("inside function!")
+    data = {'Berries!': []}
+    console.log(data)
+    return keyword
+};
 
 //
 // PROMPT 6
@@ -114,5 +178,15 @@ $('#login-button').on('click', logInAndOut);
 //   - puts the result of the function inside the "result" span
 //
 // **DO NOT update any of the HTML provided!!!**
-
+function findFactorial() {
+    const num = document.getElementsByName("number");
+    let startingPlace = num
+    let currentProduct = 0
+    while (num > 0){
+        currentPtoduct = num*(num-1)
+        startingPlace -= 1
+    }
+return currentProduct
+}
 // TODO: replace this comment with your code
+$('#num').on('submit', findFactorial);
