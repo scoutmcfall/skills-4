@@ -184,9 +184,9 @@ getBerries();
 //
 // **DO NOT update any of the HTML provided!!!**
 function findFactorial() {
-    alert('we are in the function');
-    const formInput = document.getElementByName("number");
-    alert(formInput);//test
+    alert('we are in the function');//ok this works when i run the function
+    const formInput = document.getElementById("num");
+    console.log(formInput);//test
     let startingPlace = formInput
     let currentProduct = startingPlace
     while (startingPlace > 0){
@@ -195,10 +195,11 @@ function findFactorial() {
     }
 
     return currentProduct
-$('#factorial-result').append(`<li>${currentProduct}</li>`);
+    $('#factorial-result').append(`<li>${currentProduct}</li>`);
 }
 // TODO: replace this comment with your code
 // const formValues = $('#num').serialize();//turns form into js object string
 // $.post("/", formValues, resultHandler);//ajax, doing something
 
 $('#num').on('submit', findFactorial);//reloads the whole page for some reason?
+//when i run the function in the console it works, but the event handler doesn't?
